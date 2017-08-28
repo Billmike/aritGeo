@@ -1,0 +1,32 @@
+{
+  "name": "aritgeo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "aritgeo.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0",
+    "mocha-es6": "^0.5.3"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Billmike/aritGeo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Billmike/aritGeo/issues"
+  },
+  "homepage": "https://github.com/Billmike/aritGeo#readme"
+}
