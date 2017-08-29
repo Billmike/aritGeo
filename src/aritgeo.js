@@ -4,33 +4,36 @@ module.exports = {
         
             // A Geometric Progression is a sequence of numbers where each term after the first is found by multiplying the previous one by a fixed, non-zero number called the common ratio.
             // An Arithmethic Progression is a sequence of numbers such that the difference between the consecutive terms is constant.
-            
-                
-            
-            // Find the common difference between values in the array for an arithmetic progression
-            const constantDifference = arr[1] - arr[0];
+            let minCommonRatio = 1/0;
+            let maxCommonRatio = -1/0;
+            let minDiff  = 1/0;
+            let maxDiff  = -1/0;
+            let floatApproximate  = 0.000001;
+    
+        for (var i = 1; i < arr.length; ++i) {
+            let diff  = arr[i] - arr[i - 1];
+            let ratio = arr[i] / arr[i - 1];
+            minDiff  = Math.min(diff, minDiff);
+            maxDiff  = Math.max(diff, maxDiff);
+            minCommonRatio = Math.min(ratio, minCommonRatio);
+            maxCommonRatio = Math.max(ratio, maxCommonRatio);
+        }
+    
+        if (arr.length <= 0) {
+            return 0;
+        }
+
+        else if (Math.abs(minDiff - maxDiff) < floatApproximate) {
+            return "Arithmetic";
+        }
+    
+        else if (Math.abs(minCommonRatio - maxCommonRatio) < floatApproximate) {
+            return "Geometric";
+        }
         
-            // Find the common ration between the values in the array for a geometric progression
-            const commonRatio = arr[1] / arr[0];
-            
-            // forLoop to loop through the array and check if entered array is an Arithmetic or geometric progression
-            for(var i = 0; i < arr.length - 1; i++)
-            {
-                if( arr[i + 3] - arr[i + 2] == constantDifference ) {
-                    return "Arithmetic";
-                }
-                else if ((arr[i + 1] *  commonRatio) == arr[i + 2]) {
-                    return "Geometric";
-                }
-            }
-        
-            // Ensure the array is not empty
-            if (arr.length <= 0) {
-                return 0;
-            }
-            else {
-                return -1;
-            }
+        else {
+            return -1;
+        }
     }        
 }
 
